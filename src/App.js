@@ -9,16 +9,16 @@ import Footer from "./components/Footer";
 
 function App() {
   return (
-    <Router basename="/myportfolio">
+    <Router basename="/myportfolio"> {/* Base path for GitHub Pages */}
       <Navbar />
       <div style={{ minHeight: "80vh" }}> {/* Ensures space between Navbar and Footer */}
-      <Routes>
-        <Route path="/about" element={<About />} />
-        <Route path="/portfolio" element={<Portfolio />} />
-        <Route path="/contact" element={<Contact />} />
-        <Route path="/" element={<Home />} />
-        <Route path="*" element={<Home />} /> {/* Redirect to Home for unmatched routes */}
-</Routes>
+        <Routes>
+          {/* Default route set to Home */}
+          <Route path="/" element={<Home />} />
+          <Route path="/about" element={<About />} />
+          <Route path="/portfolio" element={<Portfolio />} />
+          <Route path="/contact" element={<Contact />} />
+        </Routes>
       </div>
       <Footer />
     </Router>
