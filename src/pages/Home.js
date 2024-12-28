@@ -51,10 +51,9 @@ const Home = () => {
 const styles = {
   container: {
     display: "flex",
-    flexDirection: "row", // Horizontal by default
+    flexDirection: "row", // Default to horizontal layout
     justifyContent: "space-between",
     alignItems: "flex-start",
-    height: "100vh",
     padding: "50px 30px",
     backgroundColor: "#ffffff",
     gap: "20px",
@@ -136,11 +135,11 @@ const styles = {
   /* Responsive Styles */
   "@media (max-width: 768px)": {
     container: {
-      flexDirection: "column", // Stack items vertically
+      flexDirection: "column", // Stack items vertically on smaller screens
       justifyContent: "flex-start",
       alignItems: "center",
-      padding: "30px 20px",
-      gap: "40px", // Add space between hero and previews
+      padding: "20px 15px",
+      gap: "30px", // Add space between hero and cards
     },
     left: {
       alignItems: "center",
@@ -155,7 +154,7 @@ const styles = {
       width: "100%",
     },
     title: {
-      fontSize: "2rem",
+      fontSize: "2rem", // Reduce font size for smaller screens
     },
     subtitle: {
       fontSize: "1rem",
@@ -165,7 +164,7 @@ const styles = {
       fontSize: "0.9rem",
     },
     image: {
-      width: "120px", // Smaller image
+      width: "120px", // Reduce image size
       height: "120px",
     },
   },
