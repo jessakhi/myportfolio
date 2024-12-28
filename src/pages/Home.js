@@ -23,7 +23,7 @@ const Home = () => {
         </div>
       </div>
 
-      {/* Previews Section */}
+      {/* Preview Cards */}
       <div style={styles.right}>
         <div style={styles.card} onClick={() => navigate("/about")}>
           <h2 style={styles.cardTitle}>About</h2>
@@ -51,7 +51,7 @@ const Home = () => {
 const styles = {
   container: {
     display: "flex",
-    flexDirection: window.innerWidth <= 768 ? "column" : "row", // Stack vertically on small screens
+    flexDirection: "row", // Horizontal layout for larger screens
     justifyContent: "space-between",
     alignItems: "flex-start",
     padding: "50px 30px",
@@ -61,15 +61,15 @@ const styles = {
   left: {
     display: "flex",
     flexDirection: "column",
-    alignItems: window.innerWidth <= 768 ? "center" : "flex-start",
-    textAlign: window.innerWidth <= 768 ? "center" : "left",
+    alignItems: "flex-start",
+    textAlign: "left",
     gap: "20px",
     maxWidth: "40%",
     flex: 1,
   },
   image: {
-    width: window.innerWidth <= 768 ? "120px" : "150px", // Dynamically adjust size
-    height: window.innerWidth <= 768 ? "120px" : "150px",
+    width: "150px",
+    height: "150px",
     borderRadius: "50%",
     objectFit: "cover",
     boxShadow: "0 4px 6px rgba(0, 0, 0, 0.1)",
@@ -77,15 +77,15 @@ const styles = {
   textContainer: {
     display: "flex",
     flexDirection: "column",
-    alignItems: window.innerWidth <= 768 ? "center" : "flex-start",
+    alignItems: "flex-start",
   },
   title: {
-    fontSize: window.innerWidth <= 768 ? "2rem" : "2.5rem", // Adjust font size dynamically
+    fontSize: "2.5rem",
     color: "#4b3f33",
     marginBottom: "10px",
   },
   subtitle: {
-    fontSize: window.innerWidth <= 768 ? "1rem" : "1.2rem",
+    fontSize: "1.2rem",
     color: "#7d6f64",
     marginBottom: "20px",
   },
@@ -109,10 +109,9 @@ const styles = {
   },
   right: {
     display: "flex",
-    flexDirection: window.innerWidth <= 768 ? "column" : "column", // Stack previews vertically on all devices
+    flexDirection: "column",
     gap: "20px",
     flex: 1,
-    width: "100%", // Ensure full width for smaller screens
   },
   card: {
     backgroundColor: "#fafaf7",
@@ -132,6 +131,42 @@ const styles = {
   cardDescription: {
     fontSize: "1rem",
     color: "#7d6f64",
+  },
+  /* Responsive Styles */
+  "@media (max-width: 768px)": {
+    container: {
+      flexDirection: "column", // Stack vertically on small screens
+      justifyContent: "flex-start",
+      alignItems: "center",
+      padding: "20px 15px",
+      gap: "30px",
+    },
+    left: {
+      alignItems: "center",
+      textAlign: "center",
+      maxWidth: "100%",
+    },
+    right: {
+      width: "100%",
+      alignItems: "center",
+    },
+    card: {
+      width: "100%", // Ensure cards take full width on smaller screens
+    },
+    title: {
+      fontSize: "2rem",
+    },
+    subtitle: {
+      fontSize: "1rem",
+    },
+    button: {
+      padding: "8px 12px",
+      fontSize: "0.9rem",
+    },
+    image: {
+      width: "120px",
+      height: "120px",
+    },
   },
 };
 
