@@ -14,7 +14,7 @@ const Home = () => {
           alt="Jihane Essakhi"
           style={styles.image}
         />
-        <div>
+        <div style={styles.textContainer}>
           <h1 style={styles.title}>Hello, I'm Jihane.</h1>
           <p style={styles.subtitle}>Data Science Student | Analytics Enthusiast</p>
           <button style={styles.button} onClick={() => navigate("/contact")}>
@@ -53,17 +53,20 @@ const styles = {
     display: "flex",
     flexDirection: "row",
     justifyContent: "space-between",
-    alignItems: "center",
+    alignItems: "flex-start",
     height: "100vh",
-    padding: "50px",
+    padding: "80px 50px", // Increased top padding to move the hero section lower
     backgroundColor: "#ffffff", // Pure white background
+    gap: "20px",
   },
   left: {
     display: "flex",
-    flexDirection: "row",
-    alignItems: "center",
+    flexDirection: "column",
+    alignItems: "flex-start",
+    textAlign: "left",
     gap: "20px",
-    maxWidth: "50%",
+    maxWidth: "40%",
+    flex: 1,
   },
   image: {
     width: "150px",
@@ -72,18 +75,23 @@ const styles = {
     objectFit: "cover",
     boxShadow: "0 4px 6px rgba(0, 0, 0, 0.1)",
   },
+  textContainer: {
+    display: "flex",
+    flexDirection: "column",
+    alignItems: "flex-start",
+  },
   title: {
-    fontSize: "3.5rem",
+    fontSize: "3rem",
     color: "#4b3f33", // Dark brown
-    marginBottom: "20px",
+    marginBottom: "10px",
   },
   subtitle: {
     fontSize: "1.5rem",
     color: "#7d6f64", // Muted beige
-    marginBottom: "35px",
+    marginBottom: "20px",
   },
   button: {
-    padding: "15px 30px",
+    padding: "10px 20px",
     backgroundColor: "#e0d9d3", // Soft beige-gray
     color: "#4b3f33", // Dark brown
     border: "none",
@@ -91,23 +99,20 @@ const styles = {
     cursor: "pointer",
     fontSize: "1rem",
     fontWeight: "bold",
-    transition: "background-color 0.3s ease-in-out",
     display: "flex",
     alignItems: "center",
     gap: "10px",
-  },
-  buttonHover: {
-    backgroundColor: "#d6cec7", // Darker beige-gray on hover
+    transition: "background-color 0.3s ease-in-out",
   },
   icon: {
     width: "20px",
     height: "20px",
   },
   right: {
-    flex: 1,
     display: "flex",
     flexDirection: "column",
-    gap: "30px",
+    gap: "20px",
+    flex: 1,
   },
   card: {
     backgroundColor: "#fafaf7", // Very light beige
@@ -128,6 +133,30 @@ const styles = {
     fontSize: "1rem",
     color: "#7d6f64", // Muted beige
   },
+  // Media Query for responsiveness
+  "@media (max-width: 1024px)": {
+    container: {
+      flexDirection: "column",
+      alignItems: "center",
+      textAlign: "center",
+      padding: "40px 20px", // Adjusted padding for smaller screens
+    },
+    left: {
+      alignItems: "center",
+      textAlign: "center",
+      maxWidth: "100%",
+    },
+    textContainer: {
+      alignItems: "center",
+    },
+    right: {
+      width: "100%",
+    },
+    card: {
+      width: "100%",
+    },
+  },
 };
+
 
 export default Home;
