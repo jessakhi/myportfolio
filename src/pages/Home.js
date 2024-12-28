@@ -51,36 +51,39 @@ const Home = () => {
 const styles = {
   container: {
     display: "flex",
-    flexDirection: "column", // Stack elements vertically on mobile by default
-    alignItems: "center",
-    justifyContent: "center",
-    padding: "20px",
+    flexDirection: "row",
+    justifyContent: "space-between",
+    alignItems: "flex-start",
+    height: "100vh",
+    padding: "50px 30px",
     backgroundColor: "#ffffff",
+    gap: "20px",
   },
   left: {
     display: "flex",
     flexDirection: "column",
-    alignItems: "center",
-    textAlign: "center",
-    marginBottom: "40px", // Space between Hero and Previews
+    alignItems: "flex-start",
+    textAlign: "left",
+    gap: "20px",
+    maxWidth: "40%",
+    flex: 1,
   },
   image: {
-    width: "120px",
-    height: "120px",
+    width: "150px",
+    height: "150px",
     borderRadius: "50%",
     objectFit: "cover",
     boxShadow: "0 4px 6px rgba(0, 0, 0, 0.1)",
-    marginBottom: "15px",
   },
   textContainer: {
     display: "flex",
     flexDirection: "column",
-    alignItems: "center",
-    gap: "10px",
+    alignItems: "flex-start",
   },
   title: {
-    fontSize: "2rem", // Scaled-down font size for better responsiveness
+    fontSize: "2.5rem",
     color: "#4b3f33",
+    marginBottom: "10px",
   },
   subtitle: {
     fontSize: "1.2rem",
@@ -93,24 +96,23 @@ const styles = {
     color: "#4b3f33",
     border: "none",
     borderRadius: "5px",
+    cursor: "pointer",
     fontSize: "1rem",
     fontWeight: "bold",
     display: "flex",
     alignItems: "center",
     gap: "10px",
-    cursor: "pointer",
     transition: "background-color 0.3s ease-in-out",
   },
   icon: {
-    width: "18px",
-    height: "18px",
+    width: "20px",
+    height: "20px",
   },
   right: {
     display: "flex",
     flexDirection: "column",
-    gap: "15px",
-    width: "100%", // Make cards take full width
-    alignItems: "center",
+    gap: "20px",
+    flex: 1,
   },
   card: {
     backgroundColor: "#fafaf7",
@@ -121,7 +123,6 @@ const styles = {
     textAlign: "center",
     cursor: "pointer",
     transition: "transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out",
-    width: "90%", // Adjust width to fit smaller screens
   },
   cardTitle: {
     fontSize: "1.5rem",
@@ -132,29 +133,43 @@ const styles = {
     fontSize: "1rem",
     color: "#7d6f64",
   },
-  // Media Queries
-  "@media (min-width: 768px)": {
+  /* Responsive Styles */
+  "@media (max-width: 768px)": {
     container: {
-      flexDirection: "row",
-      justifyContent: "space-between",
-      padding: "50px",
+      flexDirection: "column", // Stack items vertically
+      justifyContent: "flex-start",
+      alignItems: "center",
+      padding: "30px 20px",
     },
     left: {
-      alignItems: "flex-start",
-      textAlign: "left",
-      marginBottom: 0,
+      alignItems: "center",
+      textAlign: "center",
+      maxWidth: "100%",
+      marginBottom: "20px", // Add spacing between sections
     },
     right: {
-      flexDirection: "column",
-      gap: "20px",
-      alignItems: "flex-start",
+      width: "100%",
+      alignItems: "center",
+      marginTop: "20px",
     },
     card: {
-      width: "300px", // Consistent card size on larger devices
+      width: "100%",
+    },
+    title: {
+      fontSize: "2rem",
+    },
+    subtitle: {
+      fontSize: "1rem",
+    },
+    button: {
+      padding: "8px 12px",
+      fontSize: "0.9rem",
+    },
+    image: {
+      width: "120px",
+      height: "120px",
     },
   },
 };
-
-
 
 export default Home;
