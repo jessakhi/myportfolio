@@ -133,13 +133,13 @@ const styles = {
     color: "#7d6f64",
   },
   /* Responsive Styles */
-  "@media (max-width: 768px)": {
+  "@media (max-width: 2000px)": {
     container: {
-      flexDirection: "column", // Stack items vertically on smaller screens
+      flexDirection: "column", 
       justifyContent: "flex-start",
       alignItems: "center",
       padding: "20px 15px",
-      gap: "100px", // Add space between hero and cards
+      gap: "50px", // Add space between hero and cards
     },
     left: {
       alignItems: "center",
