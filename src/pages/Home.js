@@ -55,7 +55,7 @@ const styles = {
     justifyContent: "space-between",
     alignItems: "flex-start",
     height: "100vh",
-    padding: "80px 50px", // Increased top padding to move the hero section lower
+    padding: "80px 50px", // Top padding to lower the hero section
     backgroundColor: "#ffffff", // Pure white background
     gap: "20px",
   },
@@ -134,29 +134,40 @@ const styles = {
     color: "#7d6f64", // Muted beige
   },
   // Media Query for responsiveness
-  "@media (max-width: 1024px)": {
+  "@media (max-width: 768px)": {
     container: {
-      flexDirection: "column",
+      flexDirection: "column", // Stack items vertically
+      justifyContent: "flex-start",
       alignItems: "center",
-      textAlign: "center",
-      padding: "40px 20px", // Adjusted padding for smaller screens
+      padding: "40px 20px",
     },
     left: {
+      order: 1, // Ensure the hero section appears first
       alignItems: "center",
       textAlign: "center",
       maxWidth: "100%",
     },
-    textContainer: {
-      alignItems: "center",
-    },
     right: {
+      order: 2, // Ensure previews appear below the hero section
       width: "100%",
+      marginTop: "20px", // Add spacing between hero and previews
     },
     card: {
-      width: "100%",
+      width: "100%", // Make cards take full width
+    },
+    title: {
+      fontSize: "2.5rem", // Adjust font size for smaller screens
+    },
+    subtitle: {
+      fontSize: "1.2rem", // Adjust subtitle size for smaller screens
+    },
+    button: {
+      padding: "10px 15px", // Adjust button size
+      fontSize: "0.9rem", // Adjust font size
     },
   },
 };
+
 
 
 export default Home;
