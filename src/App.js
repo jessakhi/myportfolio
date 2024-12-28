@@ -12,12 +12,13 @@ function App() {
     <Router basename="/myportfolio">
       <Navbar />
       <div style={{ minHeight: "80vh" }}> {/* Ensures space between Navbar and Footer */}
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/about" element={<About />} />
-          <Route path="/portfolio" element={<Portfolio />} />
-          <Route path="/contact" element={<Contact />} />
-        </Routes>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/about" element={<About />} />
+        <Route path="/portfolio" element={<Portfolio />} />
+        <Route path="/contact" element={<Contact />} />
+        <Route path="*" element={<Home />} /> {/* Redirect to Home for unmatched routes */}
+</Routes>
       </div>
       <Footer />
     </Router>
