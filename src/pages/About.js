@@ -160,10 +160,11 @@ const styles = {
     flexDirection: "row",
     justifyContent: "space-between",
     gap: "20px",
+    flexWrap: "wrap", // Ensure content wraps on smaller screens
   },
   skillBox: {
-    flex: 1,
-    backgroundColor: "#ffffff", // White for contrast
+    flex: "1 1 calc(33.333% - 20px)", // Ensure 3 boxes per row, adjusting for gap
+    backgroundColor: "#ffffff",
     padding: "15px",
     borderRadius: "10px",
     boxShadow: "0 4px 6px rgba(0, 0, 0, 0.1)",
@@ -173,6 +174,18 @@ const styles = {
     paddingLeft: "20px",
     color: "#4b3f33",
     fontSize: "1rem",
+  },
+  "@media (max-width: 768px)": {
+    skillsGrid: {
+      flexDirection: "column", // Stack skill boxes vertically on smaller screens
+      gap: "15px",
+    },
+    title: {
+      fontSize: "1.5rem", // Adjust font size for smaller screens
+    },
+    text: {
+      fontSize: "1rem",
+    },
   },
 };
 
