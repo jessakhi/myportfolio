@@ -1,4 +1,4 @@
-Hi there! 👋  
+### Hi there! 👋  
 I'm Jihane Essakhi, a final-year Computer Science student at INSA Rouen, passionate about data science and analytics. I specialize in developing impactful solutions through big data, machine learning, and business intelligence tools.  
 
 📍 Based in Paris, France, I’ve gained experience working on diverse projects, including:  
