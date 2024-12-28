@@ -8,7 +8,7 @@ const Home = () => {
   return (
     <div style={styles.container}>
       {/* Hero Section */}
-      <div style={styles.left}>
+      <div style={styles.hero}>
         <img
           src={require("../assets/mypic.jpeg")}
           alt="Jihane Essakhi"
@@ -24,7 +24,7 @@ const Home = () => {
       </div>
 
       {/* Preview Cards */}
-      <div style={styles.right}>
+      <div style={styles.previews}>
         <div style={styles.card} onClick={() => navigate("/about")}>
           <h2 style={styles.cardTitle}>About</h2>
           <p style={styles.cardDescription}>
@@ -51,21 +51,22 @@ const Home = () => {
 const styles = {
   container: {
     display: "flex",
-    flexDirection: "row", // Horizontal layout for larger screens
-    justifyContent: "space-between",
-    alignItems: "flex-start",
-    padding: "50px 30px",
+    flexDirection: "column",
+    justifyContent: "flex-start",
+    alignItems: "center",
     backgroundColor: "#ffffff",
-    gap: "20px",
   },
-  left: {
+  hero: {
     display: "flex",
     flexDirection: "column",
-    alignItems: "flex-start",
-    textAlign: "left",
+    justifyContent: "center",
+    alignItems: "center",
+    textAlign: "center",
+    width: "100%",
+    height: "100vh", // Take full screen height on smaller screens
+    padding: "20px",
     gap: "20px",
-    maxWidth: "40%",
-    flex: 1,
+    backgroundColor: "#ffffff",
   },
   image: {
     width: "150px",
@@ -77,7 +78,7 @@ const styles = {
   textContainer: {
     display: "flex",
     flexDirection: "column",
-    alignItems: "flex-start",
+    alignItems: "center",
   },
   title: {
     fontSize: "2.5rem",
@@ -107,11 +108,12 @@ const styles = {
     width: "20px",
     height: "20px",
   },
-  right: {
+  previews: {
     display: "flex",
     flexDirection: "column",
     gap: "20px",
-    flex: 1,
+    width: "100%",
+    padding: "20px",
   },
   card: {
     backgroundColor: "#fafaf7",
@@ -134,24 +136,13 @@ const styles = {
   },
   /* Responsive Styles */
   "@media (max-width: 768px)": {
-    container: {
-      flexDirection: "column", // Stack vertically on small screens
-      justifyContent: "flex-start",
-      alignItems: "center",
-      padding: "20px 15px",
-      gap: "30px",
+    hero: {
+      height: "100vh", // Ensure hero section fills the height
+      padding: "20px",
     },
-    left: {
-      alignItems: "center",
-      textAlign: "center",
-      maxWidth: "100%",
-    },
-    right: {
+    previews: {
       width: "100%",
-      alignItems: "center",
-    },
-    card: {
-      width: "100%", // Ensure cards take full width on smaller screens
+      padding: "20px",
     },
     title: {
       fontSize: "2rem",
@@ -166,6 +157,9 @@ const styles = {
     image: {
       width: "120px",
       height: "120px",
+    },
+    card: {
+      width: "100%",
     },
   },
 };

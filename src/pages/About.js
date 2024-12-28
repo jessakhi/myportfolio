@@ -38,7 +38,7 @@ const About = () => {
           Enrolled in courses on Data Science, Audit, and Project Management while exploring a new cultural and academic environment.
         </p>
         <p style={styles.text}>
-          <strong>Ecole Al Jabr, Morocco</strong> — Baccalaureate in Sciences (2019)
+          <strong>Ecole Al Jabr, Morocco</strong> — Baccalaureate in Sciences (2020)
         </p>
         <p style={styles.text}>
           Graduated with a specialization in Mathematical Sciences, earning a "Mention Très Bien."
