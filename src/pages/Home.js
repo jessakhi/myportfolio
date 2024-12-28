@@ -51,7 +51,7 @@ const Home = () => {
 const styles = {
   container: {
     display: "flex",
-    flexDirection: "row",
+    flexDirection: "row", // Default for larger screens
     justifyContent: "space-between",
     alignItems: "flex-start",
     height: "100vh",
@@ -140,16 +140,16 @@ const styles = {
       justifyContent: "flex-start",
       alignItems: "center",
       padding: "30px 20px",
+      gap: "40px", // Add space between sections
     },
     left: {
       alignItems: "center",
       textAlign: "center",
       maxWidth: "100%",
-      marginBottom: "20px", // Add spacing between hero section and previews
     },
     right: {
       width: "100%",
-      marginTop: "20px", // Add spacing between sections
+      alignItems: "center",
     },
     card: {
       width: "100%",
@@ -170,5 +170,6 @@ const styles = {
     },
   },
 };
+
 
 export default Home;
