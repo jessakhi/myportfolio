@@ -55,8 +55,8 @@ const styles = {
     justifyContent: "space-between",
     alignItems: "flex-start",
     height: "100vh",
-    padding: "80px 50px", // Top padding to lower the hero section
-    backgroundColor: "#ffffff", // Pure white background
+    padding: "50px 30px", // Reduced padding
+    backgroundColor: "#ffffff",
     gap: "20px",
   },
   left: {
@@ -69,8 +69,8 @@ const styles = {
     flex: 1,
   },
   image: {
-    width: "150px",
-    height: "150px",
+    width: "120px", // Reduced size
+    height: "120px",
     borderRadius: "50%",
     objectFit: "cover",
     boxShadow: "0 4px 6px rgba(0, 0, 0, 0.1)",
@@ -81,32 +81,32 @@ const styles = {
     alignItems: "flex-start",
   },
   title: {
-    fontSize: "3rem",
-    color: "#4b3f33", // Dark brown
+    fontSize: "2.5rem", // Reduced size for smaller screens
+    color: "#4b3f33",
     marginBottom: "10px",
   },
   subtitle: {
-    fontSize: "1.5rem",
-    color: "#7d6f64", // Muted beige
+    fontSize: "1.2rem", // Reduced subtitle size
+    color: "#7d6f64",
     marginBottom: "20px",
   },
   button: {
-    padding: "10px 20px",
-    backgroundColor: "#e0d9d3", // Soft beige-gray
-    color: "#4b3f33", // Dark brown
+    padding: "8px 16px", // Smaller button
+    backgroundColor: "#e0d9d3",
+    color: "#4b3f33",
     border: "none",
     borderRadius: "5px",
     cursor: "pointer",
-    fontSize: "1rem",
+    fontSize: "0.9rem", // Smaller font
     fontWeight: "bold",
     display: "flex",
     alignItems: "center",
-    gap: "10px",
+    gap: "8px",
     transition: "background-color 0.3s ease-in-out",
   },
   icon: {
-    width: "20px",
-    height: "20px",
+    width: "18px", // Reduced icon size
+    height: "18px",
   },
   right: {
     display: "flex",
@@ -115,23 +115,23 @@ const styles = {
     flex: 1,
   },
   card: {
-    backgroundColor: "#fafaf7", // Very light beige
-    border: "1px solid #e0d9d3", // Subtle beige border
+    backgroundColor: "#fafaf7",
+    border: "1px solid #e0d9d3",
     borderRadius: "10px",
-    boxShadow: "0 4px 6px rgba(0, 0, 0, 0.1)", // Light shadow
+    boxShadow: "0 4px 6px rgba(0, 0, 0, 0.1)",
     padding: "20px",
     textAlign: "center",
     cursor: "pointer",
     transition: "transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out",
   },
   cardTitle: {
-    fontSize: "1.5rem",
-    color: "#4b3f33", // Dark brown
+    fontSize: "1.3rem", // Slightly smaller
+    color: "#4b3f33",
     marginBottom: "10px",
   },
   cardDescription: {
     fontSize: "1rem",
-    color: "#7d6f64", // Muted beige
+    color: "#7d6f64",
   },
   // Media Query for responsiveness
   "@media (max-width: 768px)": {
@@ -139,35 +139,37 @@ const styles = {
       flexDirection: "column", // Stack items vertically
       justifyContent: "flex-start",
       alignItems: "center",
-      padding: "40px 20px",
+      padding: "30px 20px",
     },
     left: {
-      order: 1, // Ensure the hero section appears first
+      order: 1,
       alignItems: "center",
       textAlign: "center",
       maxWidth: "100%",
     },
     right: {
-      order: 2, // Ensure previews appear below the hero section
+      order: 2,
       width: "100%",
-      marginTop: "20px", // Add spacing between hero and previews
+      marginTop: "20px",
     },
     card: {
-      width: "100%", // Make cards take full width
+      width: "100%",
     },
     title: {
-      fontSize: "2.5rem", // Adjust font size for smaller screens
+      fontSize: "2rem", // Adjust font size for smaller screens
     },
     subtitle: {
-      fontSize: "1.2rem", // Adjust subtitle size for smaller screens
+      fontSize: "1rem",
     },
     button: {
-      padding: "10px 15px", // Adjust button size
-      fontSize: "0.9rem", // Adjust font size
+      padding: "8px 12px",
+      fontSize: "0.8rem",
+    },
+    image: {
+      width: "100px", // Smaller image on phones
+      height: "100px",
     },
   },
 };
-
-
 
 export default Home;
