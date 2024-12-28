@@ -51,7 +51,7 @@ const Home = () => {
 const styles = {
   container: {
     display: "flex",
-    flexDirection: "row", // Default for larger screens
+    flexDirection: "row", // Horizontal by default
     justifyContent: "space-between",
     alignItems: "flex-start",
     height: "100vh",
@@ -140,7 +140,7 @@ const styles = {
       justifyContent: "flex-start",
       alignItems: "center",
       padding: "30px 20px",
-      gap: "40px", // Add space between sections
+      gap: "40px", // Add space between hero and previews
     },
     left: {
       alignItems: "center",
@@ -165,7 +165,7 @@ const styles = {
       fontSize: "0.9rem",
     },
     image: {
-      width: "120px",
+      width: "120px", // Smaller image
       height: "120px",
     },
   },
