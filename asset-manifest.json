@@ -1,0 +1,24 @@
+{
+  "files": {
+    "main.css": "/myportfolio/static/css/main.b0a2395d.css",
+    "main.js": "/myportfolio/static/js/main.ea1d332f.js",
+    "static/media/cielmonp.jpg": "/myportfolio/static/media/cielmonp.a8b874e22b2e5c65391d.jpg",
+    "static/media/othello.jpg": "/myportfolio/static/media/othello.250b5ebba1e6df9b781b.jpg",
+    "static/media/fentyb.jpg": "/myportfolio/static/media/fentyb.7f3bef4fe5dd935fd7da.jpg",
+    "static/media/mlunet.jpg": "/myportfolio/static/media/mlunet.246d052579964734e209.jpg",
+    "static/media/mnsitf.jpg": "/myportfolio/static/media/mnsitf.32b1d25be4749c97cc77.jpg",
+    "static/media/mypic.jpeg": "/myportfolio/static/media/mypic.bf287ee8de73d67ff732.jpeg",
+    "static/media/heartd.jpg": "/myportfolio/static/media/heartd.24bbf44ac0a1034cb49c.jpg",
+    "static/media/email.png": "/myportfolio/static/media/email.ed4eda199be9250fc281.png",
+    "static/media/contact-mail.png": "/myportfolio/static/media/contact-mail.85b72314fa30bc76799a.png",
+    "static/media/itimonp.jpg": "/myportfolio/static/media/itimonp.3b5fb2496984d76f9cdb.jpg",
+    "static/media/social.png": "/myportfolio/static/media/social.16911adb36e92af2a52d.png",
+    "index.html": "/myportfolio/index.html",
+    "main.b0a2395d.css.map": "/myportfolio/static/css/main.b0a2395d.css.map",
+    "main.ea1d332f.js.map": "/myportfolio/static/js/main.ea1d332f.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.b0a2395d.css",
+    "static/js/main.ea1d332f.js"
+  ]
+}
