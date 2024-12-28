@@ -145,12 +145,11 @@ const styles = {
       alignItems: "center",
       textAlign: "center",
       maxWidth: "100%",
-      marginBottom: "20px", // Add spacing between sections
+      marginBottom: "20px", // Add spacing between hero section and previews
     },
     right: {
       width: "100%",
-      alignItems: "center",
-      marginTop: "20px",
+      marginTop: "20px", // Add spacing between sections
     },
     card: {
       width: "100%",
