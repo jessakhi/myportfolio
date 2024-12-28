@@ -8,7 +8,7 @@ const Home = () => {
   return (
     <div style={styles.container}>
       {/* Hero Section */}
-      <div style={styles.hero}>
+      <div style={styles.left}>
         <img
           src={require("../assets/mypic.jpeg")}
           alt="Jihane Essakhi"
@@ -24,7 +24,7 @@ const Home = () => {
       </div>
 
       {/* Preview Cards */}
-      <div style={styles.previews}>
+      <div style={styles.right}>
         <div style={styles.card} onClick={() => navigate("/about")}>
           <h2 style={styles.cardTitle}>About</h2>
           <p style={styles.cardDescription}>
@@ -51,22 +51,23 @@ const Home = () => {
 const styles = {
   container: {
     display: "flex",
-    flexDirection: "column",
-    justifyContent: "flex-start",
-    alignItems: "center",
+    flexDirection: "row", // Horizontal layout for larger screens
+    justifyContent: "space-between",
+    alignItems: "flex-start",
+    padding: "50px 30px",
     backgroundColor: "#ffffff",
+    gap: "20px",
   },
-  hero: {
+  left: {
     display: "flex",
     flexDirection: "column",
-    justifyContent: "center",
-    alignItems: "center",
-    textAlign: "center",
-    width: "100%",
-    height: "100vh", // Take full screen height on smaller screens
-    padding: "20px",
+    justifyContent: "center", // Center content vertically
+    alignItems: "flex-start",
+    textAlign: "left",
     gap: "20px",
-    backgroundColor: "#ffffff",
+    maxWidth: "40%",
+    flex: 1,
+    minHeight: "100vh", // Take up the full height of the viewport
   },
   image: {
     width: "150px",
@@ -78,7 +79,7 @@ const styles = {
   textContainer: {
     display: "flex",
     flexDirection: "column",
-    alignItems: "center",
+    alignItems: "flex-start",
   },
   title: {
     fontSize: "2.5rem",
@@ -108,12 +109,11 @@ const styles = {
     width: "20px",
     height: "20px",
   },
-  previews: {
+  right: {
     display: "flex",
     flexDirection: "column",
     gap: "20px",
-    width: "100%",
-    padding: "20px",
+    flex: 1,
   },
   card: {
     backgroundColor: "#fafaf7",
@@ -136,13 +136,25 @@ const styles = {
   },
   /* Responsive Styles */
   "@media (max-width: 768px)": {
-    hero: {
-      height: "100vh", // Ensure hero section fills the height
-      padding: "20px",
+    container: {
+      flexDirection: "column", // Stack vertically on small screens
+      justifyContent: "flex-start",
+      alignItems: "center",
+      padding: "30px 15px",
+      gap: "30px",
     },
-    previews: {
+    left: {
+      alignItems: "center",
+      textAlign: "center",
+      maxWidth: "100%",
+      minHeight: "100vh", // Fill the screen height
+    },
+    right: {
       width: "100%",
-      padding: "20px",
+      alignItems: "center",
+    },
+    card: {
+      width: "100%", // Ensure cards take full width on smaller screens
     },
     title: {
       fontSize: "2rem",
@@ -157,9 +169,6 @@ const styles = {
     image: {
       width: "120px",
       height: "120px",
-    },
-    card: {
-      width: "100%",
     },
   },
 };
