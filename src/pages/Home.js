@@ -139,7 +139,7 @@ const styles = {
       justifyContent: "flex-start",
       alignItems: "center",
       padding: "20px 15px",
-      gap: "30px", // Add space between hero and cards
+      gap: "100px", // Add space between hero and cards
     },
     left: {
       alignItems: "center",
