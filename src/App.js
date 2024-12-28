@@ -9,7 +9,7 @@ import Footer from "./components/Footer";
 
 function App() {
   return (
-    <Router basename="/myportfolio">
+    <Router>
       <Navbar />
       <div style={{ minHeight: "80vh" }}> {/* Ensures space between Navbar and Footer */}
         <Routes>
