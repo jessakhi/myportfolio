@@ -28,21 +28,14 @@ const Home = () => {
         />
         <div className="home-text-container">
           <h1 className="home-title">Hello, I'm Jihane.</h1>
-          <p className="home-subtitle">
-            Data Science Student | Analytics Enthusiast
-          </p>
+          <p className="home-subtitle">Data Science Student | Analytics Enthusiast</p>
           <motion.button
             className="home-button"
             onClick={() => navigate("/contact")}
-            whileHover={{ scale: 1.1 }} // Slightly enlarge button on hover
-            whileTap={{ scale: 0.9 }} // Shrink button on tap
+            whileHover={{ scale: 1.05 }} // Slightly enlarge button on hover
+            whileTap={{ scale: 0.95 }} // Shrink button on tap
           >
-            <img
-              src={contactIcon}
-              alt="Contact Icon"
-              className="home-icon"
-            />{" "}
-            Contact Me
+            <img src={contactIcon} alt="Contact Icon" className="home-icon" /> Contact Me
           </motion.button>
         </div>
       </motion.div>

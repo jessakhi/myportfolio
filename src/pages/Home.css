@@ -40,18 +40,37 @@
 }
 
 .home-button {
-  padding: 10px 20px;
+  width: 230px;
+  height: 90px;
   background-color: #e0d9d3;
-  color: #4b3f33;
+  color: #7d6f64;
   border: none;
-  border-radius: 5px;
+  border-radius: 25px;
   cursor: pointer;
-  font-size: 1rem;
-  font-weight: bold;
+  font-size: 1.6rem;
+  font-weight: 600;
   display: flex;
   align-items: center;
-  gap: 10px;
+  justify-content: center;
+  gap: 8px;
   transition: all 0.3s ease-in-out;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.home-button:hover {
+  background-color: #fafaf7;
+  transform: translateY(-3px);
+  box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
+}
+
+.home-button:active {
+  transform: translateY(1px);
+  box-shadow: 0 3px 5px rgba(0, 0, 0, 0.1);
+}
+
+.home-icon {
+  width: 18px;
+  height: 18px;
 }
 
 .home-card {
@@ -77,4 +96,59 @@
 .home-card-description {
   font-size: 1rem;
   color: #7d6f64;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+  .home-container {
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 30px 15px;
+    gap: 30px;
+  }
+
+  .home-left,
+  .home-right {
+    align-items: center;
+    text-align: center;
+  }
+
+  .home-image {
+    width: 120px;
+    height: 120px;
+  }
+
+  .home-title {
+    font-size: 2rem;
+  }
+
+  .home-subtitle {
+    font-size: 1rem;
+  }
+
+  .home-button {
+    width: 200px;
+    height: 100px;
+    font-size: 1rem;
+    border-radius: 20px;
+    gap: 4px;
+  }
+
+  .home-icon {
+    width: 16px;
+    height: 16px;
+  }
+
+  .home-card {
+    width: 100%;
+  }
+
+  .home-card-title {
+    font-size: 1.3rem;
+  }
+
+  .home-card-description {
+    font-size: 0.9rem;
+  }
 }
