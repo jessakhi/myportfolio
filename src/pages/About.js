@@ -1,5 +1,6 @@
 import React from "react";
 import { motion } from "framer-motion";
+import CV from "../assets/CV_ESSAKHI_Jihane_1.pdf";
 
 const About = () => {
   return (
@@ -103,6 +104,27 @@ const About = () => {
         </div>
       </motion.div>
 
+      {/* CV Section */}
+      <motion.div
+        style={styles.box}
+        initial={{ opacity: 0, y: -50 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.8 }}
+      >
+        <h2 style={styles.title}>Download My CV</h2>
+        <p style={styles.text}>
+          You can view or download my CV by clicking the buttons below:
+        </p>
+        <div style={styles.buttonContainer}>
+          <a href={CV} download style={styles.link}>
+            <button style={styles.button}>Download CV</button>
+          </a>
+          <a href={CV} target="_blank" rel="noopener noreferrer" style={styles.link}>
+            <button style={styles.button}>Preview CV</button>
+          </a>
+        </div>
+      </motion.div>
+
       {/* Interests Section */}
       <motion.div
         style={styles.box}
@@ -175,25 +197,24 @@ const styles = {
     color: "#4b3f33",
     fontSize: "1rem",
   },
-  // Media query for phone devices
-  "@media (max-width: 768px)": {
-    skillsGrid: {
-      flexDirection: "column", // Stack skill boxes vertically
-      gap: "15px", // Add spacing between rows
-    },
-    skillBox: {
-      flex: "1 1 100%", // Ensure skill boxes take full width
-    },
-    title: {
-      fontSize: "1.5rem", // Adjust font size for smaller screens
-    },
-    text: {
-      fontSize: "1rem",
-    },
+  link: {
+    textDecoration: "none",
+  },
+  button: {
+    backgroundColor: "#4b3f33",
+    color: "#fff",
+    padding: "10px 20px",
+    border: "none",
+    borderRadius: "5px",
+    cursor: "pointer",
+    fontSize: "1rem",
+    boxShadow: "0 4px 6px rgba(0, 0, 0, 0.1)",
+    transition: "all 0.3s ease",
+  },
+  buttonContainer: {
+    display: "flex",
+    gap: "20px",
   },
 };
 
 export default About;
-
-
-
