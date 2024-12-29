@@ -1,8 +1,9 @@
 {
   "files": {
     "main.css": "/myportfolio/static/css/main.b94e44b1.css",
-    "main.js": "/myportfolio/static/js/main.63e2e165.js",
+    "main.js": "/myportfolio/static/js/main.c9e1d198.js",
     "static/media/cielmonp.jpg": "/myportfolio/static/media/cielmonp.a8b874e22b2e5c65391d.jpg",
+    "static/media/CV_ESSAKHI_Jihane_1.pdf": "/myportfolio/static/media/CV_ESSAKHI_Jihane_1.bded3c08520570eb713c.pdf",
     "static/media/othello.jpg": "/myportfolio/static/media/othello.250b5ebba1e6df9b781b.jpg",
     "static/media/fentyb.jpg": "/myportfolio/static/media/fentyb.7f3bef4fe5dd935fd7da.jpg",
     "static/media/mlunet.jpg": "/myportfolio/static/media/mlunet.246d052579964734e209.jpg",
@@ -15,10 +16,10 @@
     "static/media/social.png": "/myportfolio/static/media/social.16911adb36e92af2a52d.png",
     "index.html": "/myportfolio/index.html",
     "main.b94e44b1.css.map": "/myportfolio/static/css/main.b94e44b1.css.map",
-    "main.63e2e165.js.map": "/myportfolio/static/js/main.63e2e165.js.map"
+    "main.c9e1d198.js.map": "/myportfolio/static/js/main.c9e1d198.js.map"
   },
   "entrypoints": [
     "static/css/main.b94e44b1.css",
-    "static/js/main.63e2e165.js"
+    "static/js/main.c9e1d198.js"
   ]
 }
