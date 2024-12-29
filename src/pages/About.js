@@ -2,80 +2,96 @@ import React from "react";
 import { motion } from "framer-motion";
 import CV from "../assets/CV_ESSAKHI_Jihane_1.pdf";
 
-const About = () => {
+const About = ({ language }) => {
+  const translations = {
+    en: {
+      aboutMe: "About Me",
+      intro: "Hi, I'm Jihane Essakhi, a 5th-year Computer Science student at INSA Rouen Normandie. My expertise lies in machine learning, data analysis, and software engineering. I am passionate about leveraging data to solve real-world challenges.",
+      education: "Education",
+      educationDetails: [
+        { institution: "INSA Rouen Normandie", details: "Computer Science Engineering (2020-2025)" },
+        { institution: "UTP, Perak, Malaysia", details: "Semester Abroad (2024)" },
+        { institution: "Ecole Al Jabr, Morocco", details: "Baccalaureate in Sciences (2020)" },
+      ],
+      keyProjects: "Key Projects",
+      projects: [
+        {
+          title: "Project 'Ciel Mon Point d'Eau'",
+          description: "Developed a deep learning model (U-Net) for hydrological object detection, leveraging TensorFlow and Keras for the SWOT CNES/NASA mission.",
+        },
+        {
+          title: "OR2S - INSA Rouen",
+          description: "Built an information system for managing health data and calculating spatio-temporal indicators using PostgreSQL and SQLAlchemy.",
+        },
+      ],
+      skills: "Skills",
+      hobbies: "Hobbies & Interests",
+      hobbiesDetails: "Outside of work, I enjoy cheerleading, mentoring, and participating in Model United Nations (MUN) conferences.",
+      downloadCV: "Download My CV",
+      viewOrDownload: "You can view or download my CV by clicking the buttons below:",
+    },
+    fr: {
+      aboutMe: "À propos de moi",
+      intro: "Bonjour, je suis Jihane Essakhi, étudiante en informatique en 5e année à l'INSA Rouen Normandie. Mon expertise inclut l'apprentissage automatique, l'analyse de données et le génie logiciel. Je suis passionnée par l'utilisation des données pour résoudre des défis concrets.",
+      education: "Formation",
+      educationDetails: [
+        { institution: "INSA Rouen Normandie", details: "Ingénierie en informatique (2020-2025)" },
+        { institution: "UTP, Perak, Malaisie", details: "Semestre à l'étranger (2024)" },
+        { institution: "École Al Jabr, Maroc", details: "Baccalauréat en sciences (2020)" },
+      ],
+      keyProjects: "Projets clés",
+      projects: [
+        {
+          title: "Projet 'Ciel Mon Point d'Eau'",
+          description: "Développement d'un modèle d'apprentissage profond (U-Net) pour la détection d'objets hydrologiques, utilisant TensorFlow et Keras pour la mission SWOT CNES/NASA.",
+        },
+        {
+          title: "OR2S - INSA Rouen",
+          description: "Création d'un système de gestion des données de santé et calcul des indicateurs spatio-temporels avec PostgreSQL et SQLAlchemy.",
+        },
+      ],
+      skills: "Compétences",
+      hobbies: "Loisirs & intérêts",
+      hobbiesDetails: "En dehors du travail, je pratique le cheerleading, le mentorat et je participe aux conférences Model United Nations (MUN).",
+      downloadCV: "Téléchargez mon CV",
+      viewOrDownload: "Vous pouvez visualiser ou télécharger mon CV en cliquant sur les boutons ci-dessous :",
+    },
+  };
+
+  const t = translations[language] || translations.en;
+
   return (
     <div style={styles.container}>
       {/* Introduction Section */}
-      <motion.div
-        style={styles.box}
-        initial={{ opacity: 0, y: -50 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.8 }}
-      >
-        <h2 style={styles.title}>About Me</h2>
-        <p style={styles.text}>
-          Hi, I'm <strong>Jihane Essakhi</strong>, a 5th-year Computer Science student at INSA Rouen Normandie. My expertise lies in machine learning, data analysis, and software engineering. I am passionate about leveraging data to solve real-world challenges.
-        </p>
+      <motion.div style={styles.box} initial={{ opacity: 0, y: -50 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8 }}>
+        <h2 style={styles.title}>{t.aboutMe}</h2>
+        <p style={styles.text}>{t.intro}</p>
       </motion.div>
 
       {/* Education Section */}
-      <motion.div
-        style={styles.box}
-        initial={{ opacity: 0, y: 50 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.8 }}
-      >
-        <h2 style={styles.title}>Education</h2>
-        <p style={styles.text}>
-          <strong>INSA Rouen Normandie</strong> — Computer Science Engineering (2020-2025)
-        </p>
-        <p style={styles.text}>
-          Focused on Big Data Analytics, Applied Mathematics, Machine Learning, and Software Development, I have gained a strong foundation to tackle complex challenges in the tech industry.
-        </p>
-        <p style={styles.text}>
-          <strong>UTP, Perak, Malaysia</strong> — Semester Abroad (2024)
-        </p>
-        <p style={styles.text}>
-          Enrolled in courses on Data Science, Audit, and Project Management while exploring a new cultural and academic environment.
-        </p>
-        <p style={styles.text}>
-          <strong>Ecole Al Jabr, Morocco</strong> — Baccalaureate in Sciences (2020)
-        </p>
-        <p style={styles.text}>
-          Graduated with a specialization in Mathematical Sciences, earning a "Mention Très Bien."
-        </p>
+      <motion.div style={styles.box} initial={{ opacity: 0, y: 50 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8 }}>
+        <h2 style={styles.title}>{t.education}</h2>
+        {t.educationDetails.map((edu, index) => (
+          <p key={index} style={styles.text}>
+            <strong>{edu.institution}</strong> — {edu.details}
+          </p>
+        ))}
       </motion.div>
 
-      {/* Professional Projects Section */}
-      <motion.div
-        style={styles.box}
-        initial={{ opacity: 0, y: -50 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.8 }}
-      >
-        <h2 style={styles.title}>Key Projects</h2>
-        <div style={styles.subBox}>
-          <h3 style={styles.subTitle}>Project "Ciel Mon Point d'Eau"</h3>
-          <p style={styles.text}>
-            Developed a deep learning model (U-Net) for hydrological object detection, leveraging TensorFlow and Keras for the SWOT CNES/NASA mission.
-          </p>
-        </div>
-        <div style={styles.subBox}>
-          <h3 style={styles.subTitle}>OR2S - INSA Rouen</h3>
-          <p style={styles.text}>
-            Built an information system for managing health data and calculating spatio-temporal indicators using PostgreSQL and SQLAlchemy.
-          </p>
-        </div>
+      {/* Key Projects Section */}
+      <motion.div style={styles.box} initial={{ opacity: 0, y: -50 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8 }}>
+        <h2 style={styles.title}>{t.keyProjects}</h2>
+        {t.projects.map((project, index) => (
+          <div key={index} style={styles.subBox}>
+            <h3 style={styles.subTitle}>{project.title}</h3>
+            <p style={styles.text}>{project.description}</p>
+          </div>
+        ))}
       </motion.div>
 
       {/* Skills Section */}
-      <motion.div
-        style={styles.box}
-        initial={{ opacity: 0, y: 50 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.8 }}
-      >
-        <h2 style={styles.title}>Skills</h2>
+      <motion.div style={styles.box} initial={{ opacity: 0, y: 50 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8 }}>
+        <h2 style={styles.title}>{t.skills}</h2>
         <div style={styles.skillsGrid}>
           <div style={styles.skillBox}>
             <h3 style={styles.subTitle}>Technical Skills</h3>
@@ -105,41 +121,29 @@ const About = () => {
       </motion.div>
 
       {/* CV Section */}
-      <motion.div
-        style={styles.box}
-        initial={{ opacity: 0, y: -50 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.8 }}
-      >
-        <h2 style={styles.title}>Download My CV</h2>
-        <p style={styles.text}>
-          You can view or download my CV by clicking the buttons below:
-        </p>
+      <motion.div style={styles.box} initial={{ opacity: 0, y: -50 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8 }}>
+        <h2 style={styles.title}>{t.downloadCV}</h2>
+        <p style={styles.text}>{t.viewOrDownload}</p>
         <div style={styles.buttonContainer}>
           <a href={CV} download style={styles.link}>
-            <button style={styles.button}>Download CV</button>
+            <button style={styles.button}>Download</button>
           </a>
           <a href={CV} target="_blank" rel="noopener noreferrer" style={styles.link}>
-            <button style={styles.button}>Preview CV</button>
+            <button style={styles.button}>Preview</button>
           </a>
         </div>
       </motion.div>
 
-      {/* Interests Section */}
-      <motion.div
-        style={styles.box}
-        initial={{ opacity: 0, y: -50 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.8 }}
-      >
-        <h2 style={styles.title}>Hobbies & Interests</h2>
-        <p style={styles.text}>
-          Outside of work, I enjoy <strong>cheerleading</strong>, mentoring, and participating in Model United Nations (MUN) conferences.
-        </p>
+      {/* Hobbies Section */}
+      <motion.div style={styles.box} initial={{ opacity: 0, y: -50 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8 }}>
+        <h2 style={styles.title}>{t.hobbies}</h2>
+        <p style={styles.text}>{t.hobbiesDetails}</p>
       </motion.div>
     </div>
   );
 };
+
+
 
 const styles = {
   container: {

@@ -1,20 +1,44 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
-import { motion } from "framer-motion"; // Import framer-motion for animations
+import { motion } from "framer-motion";
 import contactIcon from "../assets/contact-mail.png";
-import "./Home.css"; // Import the CSS file
+import "./Home.css";
 
-const Home = () => {
+const Home = ({ language }) => {
   const navigate = useNavigate();
+
+  const translations = {
+    en: {
+      title: "Hello, I'm Jihane.",
+      subtitle: "Data Science Student | Analytics Enthusiast",
+      contactButton: "Contact Me",
+      cards: [
+        { title: "About", description: "Learn more about me and my background.", path: "/about" },
+        { title: "Portfolio", description: "Explore my data science projects and analytics work.", path: "/portfolio" },
+        { title: "Contact", description: "Reach out to discuss opportunities or collaborations.", path: "/contact" },
+      ],
+    },
+    fr: {
+      title: "Bonjour, je suis Jihane.",
+      subtitle: "Étudiante en Data Science | Passionnée d'Analytique",
+      contactButton: "Contactez-moi",
+      cards: [
+        { title: "À propos", description: "Découvrez mon parcours.", path: "/about" },
+        { title: "Portfolio", description: "Explorez mes projets en data science.", path: "/portfolio" },
+        { title: "Contact", description: "Discutez de collaborations ou opportunités.", path: "/contact" },
+      ],
+    },
+  };
+
+  const t = translations[language] || translations.en;
 
   return (
     <motion.div
       className="home-container"
-      initial={{ opacity: 0 }} // Initial state for fade-in
-      animate={{ opacity: 1 }} // Animation target state
-      transition={{ duration: 1 }} // Animation duration
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      transition={{ duration: 1 }}
     >
-      {/* Hero Section */}
       <motion.div
         className="home-left"
         initial={{ x: -100, opacity: 0 }}
@@ -27,40 +51,35 @@ const Home = () => {
           className="home-image"
         />
         <div className="home-text-container">
-          <h1 className="home-title">Hello, I'm Jihane.</h1>
-          <p className="home-subtitle">Data Science Student | Analytics Enthusiast</p>
+          <h1 className="home-title">{t.title}</h1>
+          <p className="home-subtitle">{t.subtitle}</p>
           <motion.button
             className="home-button"
             onClick={() => navigate("/contact")}
-            whileHover={{ scale: 1.05 }} // Slightly enlarge button on hover
-            whileTap={{ scale: 0.95 }} // Shrink button on tap
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
           >
-            <img src={contactIcon} alt="Contact Icon" className="home-icon" /> Contact Me
+            <img src={contactIcon} alt="Contact Icon" className="home-icon" /> {t.contactButton}
           </motion.button>
         </div>
       </motion.div>
 
-      {/* Preview Cards */}
       <motion.div
         className="home-right"
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
-        transition={{ duration: 1.5, delay: 0.5 }} // Delayed fade-in
+        transition={{ duration: 1.5, delay: 0.5 }}
       >
-        {[
-          { title: "About", description: "Learn more about me and my background.", path: "/about" },
-          { title: "Portfolio", description: "Explore my data science projects and analytics work.", path: "/portfolio" },
-          { title: "Contact", description: "Reach out to discuss opportunities or collaborations.", path: "/contact" },
-        ].map((card, index) => (
+        {t.cards.map((card, index) => (
           <motion.div
             key={index}
             className="home-card"
             onClick={() => navigate(card.path)}
-            whileHover={{ scale: 1.05 }} // Slightly enlarge on hover
-            whileTap={{ scale: 0.95 }} // Shrink on tap
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
             initial={{ y: 50, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
-            transition={{ duration: 0.7, delay: 0.2 * index }} // Staggered animation
+            transition={{ duration: 0.7, delay: 0.2 * index }}
           >
             <h2 className="home-card-title">{card.title}</h2>
             <p className="home-card-description">{card.description}</p>

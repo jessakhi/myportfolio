@@ -3,24 +3,46 @@ import emailIcon from "../assets/email.png";
 import linkedinIcon from "../assets/social.png";
 import contactIcon from "../assets/contact-mail.png";
 
-const Contact = () => {
+const Contact = ({ language }) => {
+  const translations = {
+    en: {
+      title: "Contact Me",
+      description: "I’d love to hear from you! Feel free to reach out for any opportunities or questions.",
+      email: "Email",
+      linkedin: "LinkedIn",
+      message: "Feel free to drop a message anytime!",
+    },
+    fr: {
+      title: "Contactez-moi",
+      description: "Je serais ravie de vous entendre ! N'hésitez pas à me contacter pour toute opportunité ou question.",
+      email: "E-mail",
+      linkedin: "LinkedIn",
+      message: "N'hésitez pas à laisser un message à tout moment !",
+    },
+  };
+
+  const t = translations[language] || translations.en;
+
   return (
     <div style={styles.container}>
-      <h2 style={styles.header}>Contact Me</h2>
+      <h2 style={styles.header}>{t.title}</h2>
       <div style={styles.descBox}>
-        <p style={styles.description}>I’d love to hear from you! Feel free to reach out for any opportunities or questions.</p>
+        <p style={styles.description}>{t.description}</p>
       </div>
       <div style={styles.contactInfo}>
         <div style={styles.contactItem}>
           <img src={emailIcon} alt="Email Icon" style={styles.icon} />
           <p>
-            Email: <a href="mailto:jihane.essakhi.e@gmail.com" style={styles.link}>jihane.essakhi.e@gmail.com</a>
+            {t.email}:{" "}
+            <a href="mailto:jihane.essakhi.e@gmail.com" style={styles.link}>
+              jihane.essakhi.e@gmail.com
+            </a>
           </p>
         </div>
         <div style={styles.contactItem}>
           <img src={linkedinIcon} alt="LinkedIn Icon" style={styles.icon} />
           <p>
-            LinkedIn: 
+            {t.linkedin}:{" "}
             <a
               href="https://www.linkedin.com/in/jihane-essakhi-3aba351bb/"
               target="_blank"
@@ -33,7 +55,7 @@ const Contact = () => {
         </div>
         <div style={styles.contactItem}>
           <img src={contactIcon} alt="Contact Icon" style={styles.icon} />
-          <p>Feel free to drop a message anytime!</p>
+          <p>{t.message}</p>
         </div>
       </div>
     </div>
